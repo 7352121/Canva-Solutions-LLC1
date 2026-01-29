@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #050505;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar to keep it sleek */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+/* --- GLOBAL CUSTOM CLASSES --- */
+@layer components {
+  .hover-slide-right {
+    @apply transition-transform duration-300 hover:translate-x-2;
+  }
+}
+
+/* =========================================
+   1. YOUR ORIGINAL ANIMATIONS (For Ticker)
+   (Moves 33.33% because you have 3 sets of data)
+   ========================================= */
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 60s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 60s linear infinite;
+}
+
+/* Pause animation when user hovers over the bar */
+.animate-scroll-left:hover,
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+
+/* =========================================
+   2. NEW ANIMATION (For Team & Reviews)
+   (Moves 50% because we duplicate data ONCE: [...data, ...data])
+   ========================================= */
+
+@keyframes loopScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-loop-scroll {
+  /* Ensure the content is wide enough to scroll */
+  display: flex;
+  width: max-content;
+  /* The animation: name duration timing-function iteration */
+  animation: loopScroll 40s linear infinite;
+}
+
+/* Pause on hover for better UX */
+.animate-loop-scroll:hover {
+  animation-play-state: paused;
+}

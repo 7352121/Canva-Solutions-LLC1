@@ -120,7 +120,7 @@ const Contact = () => {
                 keywords="contact canva solutions, hire web developers, mobile app quote, software agency contact, digital marketing consultation, project inquiry, get a quote"
             />
 
-            <div className="pt-6 px-4 lg:px-16 max-w-[1600px] mx-auto relative z-50">
+            <div className="pt-[33px] px-4 lg:px-16 max-w-[1632px] mx-auto relative z-50">
                 <Navbar />
             </div>
 

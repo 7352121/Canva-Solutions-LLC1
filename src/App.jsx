@@ -8,7 +8,7 @@ import ScrollRestoration from './components/common/ScrollRestoration';
 import Sidebar from './components/layout/Sidebar';
 
 // Pages
-import Home from './pages/home';
+import Home from './pages/Home';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';

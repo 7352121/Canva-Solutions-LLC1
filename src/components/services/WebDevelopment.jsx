@@ -16,7 +16,7 @@ import ServiceLayout from './ServiceLayout';
 import PrimaryButton from '../common/PrimaryButton';
 
 // ✅ IMPORT LOCAL IMAGE
-import webHero from '../../assets/images/Web.jpg';
+import webHero from '../../assets/images/web.jpg';
 
 const WebDevelopment = () => {
     

@@ -48,7 +48,7 @@ const Hero = () => {
 
                     <Navbar />
 
-                    <div className="flex-grow flex flex-col justify-center py-12 lg:pb-10">
+                    <div className="flex-grow flex flex-col justify-center py-4 lg:pb-16">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                             {/* Left Side (Text) */}

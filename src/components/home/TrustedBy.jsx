@@ -1,25 +1,14 @@
 import React from 'react';
-import { Hexagon, Triangle, Circle, Box, Layers, Droplet, Activity, Command } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ScrollRotate from '../common/ScrollRotate';
 import PrimaryButton from '../common/PrimaryButton';
+
+// Import logos from data file
+import { logoImages } from '../../data/logosData';
 
 import loopBackground from '../../assets/images/loop-background.png';
 import loopImage from '../../assets/images/loop.png';
 
 const TrustedBy = () => {
-
-    const companies = [
-        { name: "Aura", icon: <Circle size={32} strokeWidth={2.5} /> },
-        { name: "Pera", icon: <Triangle size={32} strokeWidth={2.5} className="rotate-180" /> },
-        { name: "Unicoin", icon: <Hexagon size={32} strokeWidth={2.5} /> },
-        { name: "Heline", icon: <Activity size={32} strokeWidth={2.5} /> },
-        { name: "Tandem", icon: <Layers size={32} strokeWidth={2.5} /> },
-        { name: "Mercury", icon: <Droplet size={32} strokeWidth={2.5} /> },
-        { name: "Logic", icon: <Box size={32} strokeWidth={2.5} /> },
-        { name: "Flikbox", icon: <Command size={32} strokeWidth={2.5} /> },
-    ];
-
     return (
         <section className="relative py-16 lg:py-24 overflow-hidden">
 
@@ -33,49 +22,59 @@ const TrustedBy = () => {
                 <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
             </div>
 
-            {/* MAIN CONTENT */}
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1200px]">
-
-                {/* Company Logos */}
-                <div className="text-center mb-16 lg:mb-24">
+            {/* --- FULL SCREEN WIDTH LOGO SLIDER --- */}
+            <div className="relative z-10 w-full mb-16 lg:mb-24">
+                <div className="text-center container mx-auto px-4">
                     <p className="text-gray-400 text-sm sm:text-base font-medium mb-8 lg:mb-12 tracking-wide uppercase">
                         More than 100+ companies trust us worldwide
                     </p>
+                </div>
 
-                    {/* ✅ Responsive Grid: 2 cols on mobile, 4 on desktop */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-16 justify-items-center items-center">
-                        {companies.map((company, index) => (
-                            <div key={index} className="flex items-center gap-3 lg:gap-4 text-gray-400 font-bold text-xl lg:text-2xl opacity-80 hover:opacity-100 hover:text-white transition-all duration-300 cursor-default group">
-                                <span className="group-hover:text-blue-400 transition-colors scale-90 lg:scale-100">{company.icon}</span>
-                                <span>{company.name}</span>
+                {/* Slider wrapper - No max-width for full screen span */}
+                <div className="relative flex overflow-hidden w-full">
+                    <div className="flex animate-loop-scroll items-center py-4">
+                        {/* Double the array for a seamless infinite loop */}
+                        {[...logoImages, ...logoImages].map((logo, index) => (
+                            <div key={index} className="mx-4 lg:mx-6 shrink-0">
+                                {/* Logo Card with border and rounded corners */}
+                                <div className="bg-white border border-white rounded-2xl p-4 lg:p-4">
+                                    <img 
+                                        src={logo} 
+                                        alt={`Partner Brand ${index + 1}`} 
+                                        className="h-12 lg:h-24 w-auto object-contain cursor-default"
+                                    />
+                                </div>
                             </div>
                         ))}
                     </div>
+
+                    {/* Fading Edge Overlays */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#050505]/95 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#050505]/95 to-transparent z-10 pointer-events-none"></div>
                 </div>
+            </div>
 
-                {/* Bottom Section */}
+            {/* BOTTOM CONTENT SECTION (Contained in max-width) */}
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1200px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-                    {/* Left Column: 3D Image (Order 2 on mobile, 1 on desktop) */}
+                    
+                    {/* Left Column: Static Image (ScrollRotate removed) */}
                     <div className="relative flex justify-center lg:justify-start group order-2 lg:order-1">
                         <div className="relative z-10 w-3/4 sm:w-full max-w-[350px] lg:max-w-[450px]">
-                            <ScrollRotate rotationSpeed={0.08} scaleSpeed={0.0002}>
-                                <img
-                                    src={loopImage}
-                                    alt="Abstract 3D Loop"
-                                    className="w-full h-auto object-contain drop-shadow-2xl opacity-90 brightness-110 contrast-125"
-                                />
-                            </ScrollRotate>
+                            <img
+                                src={loopImage}
+                                alt="Abstract 3D Loop"
+                                className="w-full h-auto object-contain drop-shadow-2xl opacity-90 brightness-110 contrast-125"
+                            />
                         </div>
                     </div>
 
-                    {/* Right Column: Content (Order 1 on mobile, 2 on desktop) */}
+                    {/* Right Column: Text Content */}
                     <div className="text-center lg:text-left pl-0 lg:pl-10 order-1 lg:order-2">
                         <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] sm:text-xs font-medium text-gray-300 mb-6 lg:mb-8">
                             More About Our Company
                         </div>
 
-                        {/* ✅ Responsive Text Sizes */}
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-6 font-['Manrope'] leading-[1.2] lg:leading-[1.15] tracking-tight">
                             All-in-One Service Provider <br className="hidden sm:block" />
                             Think It. Design It. Achieve It. <br className="hidden sm:block" />

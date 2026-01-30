@@ -7,7 +7,7 @@ import Navbar from '../layout/Navbar';
 import PrimaryButton from '../common/PrimaryButton';
 import SecondaryButton from '../common/SecondaryButton'; 
 
-import heroVideo from '../../assets/video/Hero.mp4'; 
+import heroVideo from '../../assets/video/hero.mp4'; 
 
 const Hero = () => {
     

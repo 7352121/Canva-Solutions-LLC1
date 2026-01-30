@@ -13,7 +13,7 @@ import InsightsBlog from '../components/home/InsightsBlog';
 import FAQ from '../components/home/FAQ';
 import FinalCTA from '../components/home/FinalCTA';
 import Footer from '../components/layout/Footer';
-import Sidebar from '../components/layout/Sidebar';
+
 import ScrollToTop from '../components/common/ScrollToTop';
 // <--- NEW IMPORT
 import WhatsAppButton from '../components/common/WhatsAppButton'; 

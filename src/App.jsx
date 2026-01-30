@@ -40,7 +40,7 @@ const Placeholder = ({ title }) => (
 
 const App = () => {
   return (
-    // ❌ NO HelmetProvider here (It is now in main.jsx)
+   
     <Router>
       <ScrollRestoration />
       <ScrollToTop />

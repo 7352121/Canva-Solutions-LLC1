@@ -27,10 +27,7 @@ body {
   }
 }
 
-/* =========================================
-   1. YOUR ORIGINAL ANIMATIONS (For Ticker)
-   (Moves 33.33% because you have 3 sets of data)
-   ========================================= */
+
 
 @keyframes scrollLeft {
   0% { transform: translateX(0); }
@@ -57,10 +54,6 @@ body {
 }
 
 
-/* =========================================
-   2. NEW ANIMATION (For Team & Reviews)
-   (Moves 50% because we duplicate data ONCE: [...data, ...data])
-   ========================================= */
 
 @keyframes loopScroll {
   0% { transform: translateX(0); }

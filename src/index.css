@@ -1,74 +1,59 @@
-@import "tailwindcss";
+/* Note: URL imports must come before @import "tailwindcss" */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-body {
-  font-family: 'Manrope', sans-serif;
-  background-color: #050505;
-  color: #ffffff;
-  overflow-x: hidden;
-}
+@theme {
+  /* Registering font as 'sans' makes it the default across the site */
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-/* Custom Scrollbar to keep it sleek */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #111;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  /* Registering animations so Tailwind creates the utility classes */
+  --animate-scroll-left: scrollLeft 60s linear infinite;
+  --animate-scroll-right: scrollRight 60s linear infinite;
+  --animate-loop-scroll: loopScroll 40s linear infinite;
 }
 
-/* --- GLOBAL CUSTOM CLASSES --- */
-@layer components {
-  .hover-slide-right {
-    @apply transition-transform duration-300 hover:translate-x-2;
+@layer base {
+  body {
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
   }
 }
 
+@layer components {
+  .hover-slide-right {
+    @apply transition-transform duration-300;
+  }
+  .hover-slide-right:hover {
+    @apply translate-x-2;
+  }
+}
 
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { 
+  background: #333; 
+  border-radius: 4px; 
+}
 
+/* Keyframes */
 @keyframes scrollLeft {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.33%); }
 }
-
 @keyframes scrollRight {
   0% { transform: translateX(-33.33%); }
   100% { transform: translateX(0); }
 }
-
-.animate-scroll-left {
-  animation: scrollLeft 60s linear infinite;
-}
-
-.animate-scroll-right {
-  animation: scrollRight 60s linear infinite;
-}
-
-/* Pause animation when user hovers over the bar */
-.animate-scroll-left:hover,
-.animate-scroll-right:hover {
-  animation-play-state: paused;
-}
-
-
-
 @keyframes loopScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.animate-loop-scroll {
-  /* Ensure the content is wide enough to scroll */
-  display: flex;
-  width: max-content;
-  /* The animation: name duration timing-function iteration */
-  animation: loopScroll 40s linear infinite;
-}
-
-/* Pause on hover for better UX */
+/* Hover behaviors */
+.animate-scroll-left:hover,
+.animate-scroll-right:hover,
 .animate-loop-scroll:hover {
   animation-play-state: paused;
 }

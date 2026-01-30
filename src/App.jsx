@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// ❌ Remove HelmetProvider import from here
 
-// Import Scrolling Components
 import ScrollToTop from './components/common/ScrollToTop';
 import ScrollRestoration from './components/common/ScrollRestoration';
 import Sidebar from './components/layout/Sidebar';

@@ -10,7 +10,7 @@ const ServiceLayout = ({ children, title, subtitle }) => {
         <div className="w-full relative bg-[#020617] min-h-screen text-white selection:bg-blue-500/30">
             
             {/* 1. Navbar */}
-            <div className="pt-[33px] px-6 lg:px-16 max-w-[1632px] mx-auto relative z-50">
+            <div className="pt-[33px] px-6 lg:px-16 max-w-[1464px] mx-auto relative z-50">
                 <Navbar />
             </div>
 

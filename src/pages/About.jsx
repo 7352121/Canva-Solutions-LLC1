@@ -39,7 +39,7 @@ const About = () => {
             />
 
             {/* 1. NAVBAR */}
-            <div className="pt-[33px] px-4 lg:px-16 max-w-[1632px] mx-auto relative z-50">
+            <div className="pt-[33px] px-4 lg:px-16 max-w-[1464px] mx-auto relative z-50">
                 <Navbar />
             </div>
 

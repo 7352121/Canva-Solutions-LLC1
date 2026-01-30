@@ -6,12 +6,12 @@ import ScrollRestoration from './components/common/ScrollRestoration';
 import Sidebar from './components/layout/Sidebar';
 
 // Pages
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Blog from './pages/Blog';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Home from './pages/Home.jsx';
+import Services from './pages/Services.jsx';
+import Portfolio from './pages/Portfolio.jsx';
+import Blog from './pages/Blog.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 import BlogPost from './components/blogs/BlogPost';
 
 // Services Sub-pages
